@@ -1,0 +1,43 @@
+
+<html>
+    <head>
+        <title>Calculator</title>
+        <link href="style.css" type="text/css" rel="stylesheet">
+        <link href="http://schulzmarcel.de/x/fonts/digital-7_mono.ttf">
+        <link href="http://schulzmarcel.de/x/fonts/Geometry.otf">
+
+    </head>
+    <body>
+        <div class="case"> 
+            <table id="equals">
+                <tr><td colspan=5><input id="display" type="text" value="" placeholder="0" maxlength="11" ></td></tr>
+                <tr><td><input class="mbutton" type="button" value="MR" onClick='mRecall(mem)'></td>
+                <td><input class="mbutton" type="button" value="M+" onClick=mPlus(display.value)></td>
+                <td><input class="mbutton" type="button" value="M-" onClick=mMinus(display.value)></td>
+                <td><input class="mbutton" type="button" value="MC" onClick='mClear()'></td></tr>
+                <tr><td><input class="button" type="button" value="1" onClick="display.value+='1'"></td>
+                <td><input class="button" type="button" value="2" onClick="display.value+='2'"></td>
+                <td><input class="button" type="button" value="3" onClick="display.value+='3'"></td>
+                <td><input class="button" type="button" value="x" onClick="display.value+='*'"></td></tr>
+                <tr><td><input class="button" type="button" value="4" onClick="display.value+='4'"></td>
+                <td><input class="button" type="button" value="5" onClick="display.value+='5'"></td>
+                <td><input class="button" type="button" value="6" onClick="display.value+='6'"></td>
+                <td><input class="button" type="button" value="-" onClick="display.value+='-'"></td></tr>
+                <tr><td><input class="button" type="button" value="7" onClick="display.value+='7'"></td>
+                <td><input class="button" type="button" value="8" onClick="display.value+='8'"></td>
+                <td><input class="button" type="button" value="9" onClick="display.value+='9'"></td>
+                <td><input class="button" type="button" value="/" onClick="display.value+='/'"></td></tr>
+                <tr><td><input class="button" type="button" value=&#9003; onClick="display.value = (display.value.slice(0, - 1))"></td> 
+                <!--slice method was better than substr method in the end-->
+            
+                <td><input class="button" type="button" value="0" onClick="display.value+='0'"></td>
+                <td><input class="button" type="button" name="dot"value="." id="dot" onClick="calc.output.value += '.'"></td>
+                <td rowspan="2"><input class="button" id="plusbutton" type="button" value="+" onClick="display.value+='+'"></td></tr>
+                <tr><td><input class="mbutton" id="clrbutton" type="button" value="Clear" onClick="display.value=''"></td>
+                <td colspan="2"><input class="sum-button" type="button" value="=" id="equal"onClick="display.value=eval(display.value)"></td></tr>
+                          
+            </table>
+        </div>
+        <script src="main.js" type="text/js"></script>
+    </body>
+</html>
